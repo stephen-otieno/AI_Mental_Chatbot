@@ -4,9 +4,9 @@ def home(request):
     return render(request,'index.html')
 
 def login(request):
-    return render(request,'login.html')
+    return render(request,'index.html')
 
-def register(request):
-    return render(request,'register.html')
+def signup(request):
+    return render(request,'signup.html')
 
 # Create your views here.

@@ -5,10 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduWell - Login</title>
+    <title>AI Mental Support - Signup</title>
     <link rel="stylesheet" href="{% static 'assets/css/signup.css' %}">
-      <link href="{% static 'assets/logo.jpg' %}" rel="icon">
-
      <style>
         body{
             background: url("{% static 'assets/img/gallery/gallery-1.jpg' %}");
@@ -19,18 +17,20 @@
 <body>
     <div class="container">
         <div class="left-panel">
-            <h2>EduWell</h2>
-          <img src="{% static 'assets/img/cropped_logo.png' %}" alt="">
+            <h2>WELCOME</h2>
+            <h3>EduWell.</h3>
+            <p>Your AI-powered companion for mental well-being.</p>
         </div>
         <div class="right-panel">
-            <h2>Login</h2>
-            <form id="signupForm" action="" method="">
-                {% csrf_token %}
+            <h2>Create an account</h2>
+            <form id="signupForm" action="/signup" method="POST">
+                <input type="text" name="full_name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <button href="{% url 'homepage' %}" type="submit">Login</button>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit">Create an account</button>
             </form>
-            <p>Create an account <a href="/signup/">Sign up</a></p>
+            <p>Already have an account? <a href="/login">Login</a></p>
             <p id="message"></p>
         </div>
     </div>
