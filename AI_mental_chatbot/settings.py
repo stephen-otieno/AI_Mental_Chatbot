@@ -118,6 +118,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+SIGNUP_URL = 'signup/'
+SIGNUP_REDIRECT_URL = 'login/'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL ='homepage'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

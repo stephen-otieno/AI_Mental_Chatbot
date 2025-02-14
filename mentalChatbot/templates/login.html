@@ -20,11 +20,11 @@
     <div class="container">
         <div class="left-panel">
             <h2>EduWell</h2>
-          <img src="{% static 'assets/img/cropped_logo.png' %}" alt="">
+{#          <img src="{% static 'assets/img/cropped_logo.png' %}" alt="">#}
         </div>
         <div class="right-panel">
             <h2>Login</h2>
-            <form id="signupForm" action="" method="">
+            <form id="signupForm" action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="password" name="password" placeholder="Password" required>

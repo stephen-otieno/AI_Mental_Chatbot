@@ -23,6 +23,17 @@
         </div>
         <div class="right-panel">
             <h2>Create an account</h2>
+
+{#            <form action="" method="POST" >#}
+{#                {% csrf_token %}#}
+{##}
+{#                {{ form.as_p }}#}
+{##}
+{#                <input type="submit" name="create User">#}
+{##}
+{##}
+{#            </form>#}
+            
             <form id="signupForm" action="{% url 'signup' %}" method="POST">
                 {% csrf_token %}
                 <input type="text" name="user_name" placeholder="Full Name" required>
@@ -31,6 +42,7 @@
                 <input type="password" name="user_password2" placeholder="Confirm Password" required>
                 <a href="/login/"> <button type="submit">Create an account</button></a>
             </form>
+
             <p>Already have an account? <a href="/login">Login</a></p>
             <p id="message"></p>
         </div>

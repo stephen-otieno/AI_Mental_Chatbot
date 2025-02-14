@@ -2,41 +2,53 @@ from django.shortcuts import render, redirect
 from .forms import SignupForm
 from django.contrib.auth.hashers import make_password
 from .models import User
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 def home(request):
     return render(request,'index.html')
 
-def login(request):
-    return render(request,'login.html')
-
 # def signup(request):
+#     form=UserCreationForm()
+#
 #     if request.method == 'POST':
-#         form = SignupForm(request.POST)
+#         form=UserCreationForm(request.POST)
 #         if form.is_valid():
-#             user_name = form.cleaned_data['user_name']
-#             user_email = form.cleaned_data['user_email']
-#             user_password1 = form.cleaned_data['user_password1']
-#
-#             # Hash the password before saving it
-#             hashed_password = make_password(user_password1)
-#
-#             User.objects.create(
-#                 user_name=user_name,
-#                 user_email=user_email,
-#                 user_password1=hashed_password,
-#                 user_password2=hashed_password
-#
-#             )
-#
-#             user = form.save()
-#
-#             return redirect('login')  # Redirect to login after successful signup
-#         else:
-#             form = SignupForm()
+#             form.save()
 #
 #
 #
-#     return render(request, 'signup.html')
+#     context = {'form':form}
+#     return render(request,'signup.html',context)
+#
+
+# def login_page(request):
+#     return render(request,'login.html')
+
+
+
+
+def login_page(request):
+    if request.method == 'POST':
+            email = request.POST.get('user_email')
+            password = request.POST.get('user_password1')
+
+
+            # Authenticate user with email and password
+            user = authenticate(request, username=email, password=password)
+
+            if user is not None:
+                login(request, user)
+                return redirect('homepage')  # Ensure this points to a valid route
+            else:
+                messages.error(request, "Invalid credentials")
+                return redirect('login')
+
+
+
+
+    return render(request, 'login.html')
+
 
 def signup(request):
     if request.method == 'POST':
