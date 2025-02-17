@@ -35,6 +35,8 @@ def login_page(request):
     return render(request, 'login.html',{'form':form})
 
 
+def relationships(request):
+    return render(request,'relationships.html')
 
 
 
