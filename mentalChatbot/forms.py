@@ -19,7 +19,7 @@ class RegisterForm(forms.ModelForm):
     username = forms.CharField(
         max_length=150,
         help_text="",  # Remove help text
-        widget=forms.TextInput(attrs={"placeholder": "Enter your username"})  #  Optional
+        widget=forms.TextInput(attrs={"placeholder": "Enter your username"})  #Optional
     )
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'}))

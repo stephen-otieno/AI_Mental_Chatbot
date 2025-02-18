@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from django.contrib.auth.hashers import make_password
@@ -35,9 +36,13 @@ def login_page(request):
     return render(request, 'login.html',{'form':form})
 
 
+
+@login_required(login_url='login')
 def relationships(request):
     return render(request,'relationships.html')
 
+def drugs(request):
+     return render(request,'drugs.html')
 
 
 
