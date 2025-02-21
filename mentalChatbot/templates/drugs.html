@@ -5,14 +5,13 @@
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>EduWell-Drug & Substance Abuse</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"><title>EduWell</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/logo.jpg' %}" rel="icon">
-  <link href="{% static 'assets/logo.jpg' %}" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
+  <link href="{% static 'assets/img/logo1.png' %}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -28,8 +27,8 @@
   <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'assets/css/relationships.css' %}">
+  <link href="{% static 'assets/css/main.css ' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/drugs.css' %}" rel="stylesheet">
 
 </head>
 
@@ -44,17 +43,18 @@
       <div class="container position-relative d-flex align-items-center justify-content-end">
         <a href="index.html" class="logo d-flex align-items-center me-auto">
           <img src="{% static 'assets/img/logo1.png' %}" alt="">
-           <h1 class="sitename">EduWell</h1>
+          <h1 class="sitename">EduWell</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="{% url 'homepage' %}" class="active">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#departments">Departments</a></li>
-            <li><a href="#doctors">Doctors</a></li>
+              <li><a href="#substances">Substances</a></li>
+              <li><a href="#effects">Effects</a></li>
+            <li><a href="#causes">Causes</a></li>
+            <li><a href="#prevention">Prevention</a></li>
 
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -65,11 +65,93 @@
 
     </div>
 
-
-  </header>
-
+    </header>
   <main>
-      <h3>Drugs & Substance Abuse</h3>
+   <h1 style="align-content:center;justify-content: center;display: flex;color:  #3fbbc0"><u>Drugs & Substance Abuse Awareness</u></h1>
+    <br><br>
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>Drug and substance abuse is a significant issue in universities, affecting students' mental health, academic
+            performance, and future opportunities. This page provides information on commonly abused substances, their
+            effects, causes, prevention methods, and available support systems.</p>
+    </section>
+
+    <section id="substances">
+        <h2>Commonly Abused Substances</h2>
+        <ul>
+            <li><strong>Alcohol:</strong> Can cause addiction, liver damage, and impaired judgment.</li>
+            <li><strong>Marijuana:</strong> Affects memory, cognition, and motivation.</li>
+            <li><strong>Prescription Drugs:</strong> Misuse of painkillers and stimulants can lead to dependence.</li>
+            <li><strong>Nicotine & Vaping:</strong> Highly addictive and harmful to respiratory health.</li>
+            <li><strong>Hard Drugs (Cocaine, Heroin, Meth):</strong> Highly dangerous, leading to severe mental and
+                physical health issues.</li>
+        </ul>
+    </section>
+
+    <section id="effects">
+        <h2>Effects on Mental and Physical Health</h2>
+        <p>Substance abuse leads to a range of issues, including:</p>
+        <ul>
+            <li>Anxiety, depression, and other mental health disorders.</li>
+            <li>Increased risk of academic failure and legal consequences.</li>
+            <li>Physical health issues such as liver disease, respiratory problems, and overdose risks.</li>
+        </ul>
+    </section>
+
+    <section id="causes">
+        <h2>Why Students Use Drugs and Alcohol</h2>
+        <ul>
+            <li>Peer pressure and social expectations.</li>
+            <li>Stress from academic workload.</li>
+            <li>Emotional struggles and mental health challenges.</li>
+            <li>Curiosity and experimental behavior.</li>
+            <li>Lack of awareness about risks.</li>
+        </ul>
+    </section>
+
+    <section id="prevention">
+        <h2>Prevention Strategies</h2>
+        <ul>
+            <li>Promoting awareness and education about substance abuse.</li>
+            <li>Encouraging healthy coping mechanisms like exercise and meditation.</li>
+            <li>Providing access to university counseling services.</li>
+            <li>Developing strong social support networks.</li>
+            <li>Strict campus policies on drug and alcohol use.</li>
+        </ul>
+    </section>
+
+    <section id="support">
+        <h2>Support & Recovery Resources</h2>
+        <p>If you or someone you know is struggling with substance abuse, reach out to:</p>
+        <ul>
+            <li>University counseling centers.</li>
+            <li>Rehabilitation programs.</li>
+            <li>Anonymous support groups like Alcoholics Anonymous (AA) and Narcotics Anonymous (NA).</li>
+            <li>National helplines for addiction recovery.</li>
+        </ul>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">How do I know if I have a problem?</button>
+            <p class="faq-answer">If substance use is affecting your daily life, relationships, or academics, seek
+                support.</p>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Where can I get help?</button>
+            <p class="faq-answer">University counseling centers, rehab programs, and anonymous helplines are available.
+            </p>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How can I help a friend struggling with substance abuse?</button>
+            <p class="faq-answer">Encourage open conversations, provide emotional support, and direct them to
+                professional resources.</p>
+        </div>
+    </section>
+
+
+
 
   </main>
 
@@ -77,9 +159,125 @@
 
 
 
+  <!-- Chatbot -->
+<button onclick="toggleChat()" style="position: fixed; bottom: 40px; right: 20px;">💬 Chat with AI</button>
+<div class="chat-container" id="chatbox" style="display: none;">
+    <div class="chat-header">EduWell AI Assistant</div>
+    <div class="chat-body" id="chatBody">
+        <p><i>AI:</i> Hi! How can I assist you?</p>
+    </div>
+    <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." onkeypress="handleChat(event)">
+</div>
+
+<!-- Emergency Helpline -->
+<button class="emergency-btn" onclick="callEmergency()">🚨 Emergency Help</button>
+
+<!-- Chatbot Button -->
+<button id="chatToggleBtn" onclick="toggleChat()" style="position: fixed; bottom: 40px; right: 20px;">💬 Chat with AI</button>
+
+<!-- Chatbot Container -->
+<div class="chat-container" id="chatbox" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; border: 1px solid #ccc; background: white; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); border-radius: 10px;">
+    <div class="chat-header" style="background: #007bff; color: white; padding: 10px; display: flex; justify-content: space-between;">
+        <span>EduWell AI Assistant</span>
+        <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">✖</button>
+    </div>
+    <div class="chat-body" id="chatBody" style="padding: 10px; max-height: 200px; overflow-y: auto;">
+        <p><i>AI:</i> Hi! How can I assist you?</p>
+    </div>
+    <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." onkeypress="handleChat(event)" style="width: 100%; padding: 8px; border: none; border-top: 1px solid #ccc;">
+</div>
 
 
-  <footer id="footer" class="footer light-background">
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Toggle Chatbot Visibility
+        function toggleChat() {
+            let chatbox = document.getElementById("chatbox");
+            let chatToggleBtn = document.getElementById("chatToggleBtn");
+
+            if (chatbox.style.display === "none" || chatbox.style.display === "") {
+                chatbox.style.display = "block"; // Show chat
+                chatToggleBtn.innerHTML = "✖ Close Chat";
+            } else {
+                chatbox.style.display = "none"; // Hide chat
+                chatToggleBtn.innerHTML = "💬 Chat with AI";
+            }
+        }
+
+        // Attach event listener to chatbot button
+        document.getElementById("chatToggleBtn").addEventListener("click", toggleChat);
+
+        // Handle Chat Input
+        function handleChat(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            let inputField = document.getElementById("chatInput");
+            let input = inputField.value.trim();
+            if (input === "") return;
+
+            let chatBody = document.getElementById("chatBody");
+            chatBody.innerHTML += `<p><i>You:</i> ${input}</p>`;
+            inputField.value = "";
+
+            // Simulating AI Response
+            setTimeout(() => {
+                chatBody.innerHTML += `<p><i>AI:</i> Stay strong! Seek support when needed. 😊</p>`;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+
+            // Auto-Minimize the Chatbot After 5 Seconds
+            setTimeout(() => {
+                toggleChat();
+            }, 5000);
+        }
+
+        // Attach event listener to chat input field
+        document.getElementById("chatInput").addEventListener("keypress", handleChat);
+
+        // Emergency Call Function
+        function callEmergency() {
+            alert("📞 Call 123-456-789 for immediate assistance.");
+        }
+
+        // Attach event listener to emergency button
+        document.querySelector(".emergency-btn").addEventListener("click", callEmergency);
+
+        // FAQ Toggle Logic - Ensure it Works Properly
+        document.querySelectorAll(".faq-answer").forEach(answer => {
+            answer.style.display = "none"; // Hide all answers initially
+        });
+
+        document.querySelectorAll(".faq-question").forEach(question => {
+            question.addEventListener("click", function () {
+                let answer = this.nextElementSibling;
+
+                // Toggle FAQ answer visibility
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            });
+        });
+
+    }); // ✅ Ensure `DOMContentLoaded` is properly closed
+</script>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+<footer id="footer" class="footer light-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
@@ -90,7 +288,7 @@
           <div class="footer-contact pt-3">
             <p>Tom Mboya Street</p>
             <p>Nairobi, Kenya</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+254 115 598 800</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+254 115598800</span></p>
             <p><strong>Email:</strong> <span>info@eduwell.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
@@ -118,11 +316,11 @@
             <li><a href="#">Drug Abuse & Addiction</a></li>
             <li><a href="#">Mental Illness</a></li>
             <li><a href="#">Financial Constraints</a></li>
-            <li><a href="#">Disability & Stigma</a></li>
+            <li><a href="#">Disability& Stigma</a></li>
           </ul>
         </div>
 
-
+      </div>
     </div>
 
     <div class="container copyright text-center mt-4">
@@ -132,31 +330,13 @@
         Designed by <a href="https://stemiotsoftwares.onrender.com/">StemiotInnovations</a>
       </div>
     </div>
-    </div>
 
   </footer>
-
-
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-
-  <!-- Main JS File -->
-    <script src="{% static 'assets/js/relationships.js' %}"></script>
-  <script src="{% static 'assets/js/main.js' %}"></script>
-
-
 </body>
-
 </html>
+
+
+
+
+
+

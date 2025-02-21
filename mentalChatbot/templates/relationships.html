@@ -104,8 +104,14 @@
         <div class="card">
             <h2>💖 Healthy vs. Toxic Relationships</h2>
             <p>Understand the signs of a good or bad relationship, and learn how to set healthy boundaries.</p>
-            <a href="#">Learn More</a>
-        </div>
+            <button id="learnMoreBtn">Learn More</button>
+            <script>
+                document.getElementById("learnMoreBtn").addEventListener("click", function() {
+    window.location.href = "https://www.fcs.uga.edu/docs/00_HRMET-F4.pdf";
+});
+
+            </script>
+</div>
 
         <div class="card">
             <h2>💔 Breakups & Emotional Healing</h2>
@@ -154,14 +160,14 @@
 
             <div class="question">
                 <p>4. Do you feel pressured to change who you are for your partner?</p>
-                <input type="radio" name="q4" value="0"> Yes<br>
+                <input required type="radio" name="q4" value="0"> Yes<br>
                 <input type="radio" name="q4" value="1"> Sometimes<br>
                 <input type="radio" name="q4" value="3"> No<br>
             </div>
 
             <div class="question">
                 <p>5. Does your partner communicate openly and honestly?</p>
-                <input type="radio" name="q5" value="3"> Yes<br>
+                <input required type="radio" name="q5" value="3"> Yes<br>
                 <input type="radio" name="q5" value="1"> Sometimes<br>
                 <input type="radio" name="q5" value="0"> No<br>
             </div>
@@ -178,6 +184,74 @@
 {#        <button>Join Now</button>#}
 {#    </section>#}
     </section>
+
+
+
+   <!-- Doctors Section -->
+    <section id="doctors" class="doctors section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Doctors</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                                   <a href="https://therelationshipfoundation.org/wp-content/uploads/2021/02/Healthy-Relationships-101-by-Michael-Jascz-published-by-the-relationship-foundation.pdf" class="stretched-link"> </a>
+
+                <img src="{% static 'assets/img/relationships.jpg' %}" class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>Freedom from Toxic relationships</h4>
+{#                <span>Chief Medical Officer</span>#}
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                                   <a href="https://youtu.be/zHAwuU4x72A" class="stretched-link"> </a>
+
+                <img src="{% static 'assets/img/youtube.jpg' %}" class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Anesthesiologist</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{% static 'assets/img/doctors/doctors-4.jpg' %}" class="img-fluid" alt="">
+
+              </div>
+              <div class="member-info">
+                <h4>Amanda Jepson</h4>
+                <span>Neurosurgeon</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Doctors Section -->
+
+
   </main>
 
 
