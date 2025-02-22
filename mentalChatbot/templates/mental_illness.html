@@ -1,0 +1,486 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Mental Health Support</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/logo1.png' %}" rel="icon">
+  <link href="{% static 'assets/img/logo1.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css ' %}" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{% static 'assets/css/mental.css' %}">
+
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-end">
+        <a style="text-decoration: none" href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="{% static 'assets/img/logo1.png' %}" alt="">
+          <h1 class="sitename">EduWell</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="{% url 'homepage' %}" class="active">Home</a></li>
+              <li><a href="#substances">Substances</a></li>
+              <li><a href="#effects">Effects</a></li>
+            <li><a href="#causes">Causes</a></li>
+            <li><a href="#prevention">Prevention</a></li>
+
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a style="text-decoration: none" class="cta-btn" href="index.html#appointment">Make an Appointment</a>
+
+      </div>
+
+    </div>
+
+    </header>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to University Mental Health Support</h1>
+        <p>Helping students navigate mental wellness together</p>
+    </section>
+
+    <!-- About Us -->
+    <section >
+        <h2>About Us</h2>
+        <p>We provide a safe space for university students to seek mental health support, resources, and peer connections.</p>
+    </section>
+
+    <!-- Resources -->
+    <section class="resources">
+        <h2>Mental Health Resources</h2>
+        <ul >
+            <li ><a style="color:  #3fbbc0" href="#">Mental Health Articles</a></li>
+            <li ><a style="color:  #3fbbc0" href="#">Helplines</a></li>
+            <li ><a style="color:  #3fbbc0" href="#">Counseling Services</a></li>
+        </ul>
+    </section>
+
+    <!-- Chat Support -->
+    <section >
+        <h2>Chat Support</h2>
+        <p>Connect with a mental health professional or peer for guidance and support.</p>
+        <button class="chat-btn">Start Chat</button>
+    </section>
+
+    <!-- Anonymous Forum -->
+    <section >
+        <h2>Anonymous Forum</h2>
+        <p>Join discussions and share experiences anonymously.</p>
+        <button class="forum-btn">Join Forum</button>
+    </section>
+
+    <!-- Contact Us -->
+    <section >
+        <h2>Contact Us</h2>
+        <form>
+            <div>
+                <label for="name">Name (Optional)</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Chatbot Button -->
+<button class="chatbot-btn" onclick="toggleChat()">💬 Chat with AI</button>
+
+<!-- Chatbot UI -->
+<div class="chat-container" id="chatbox">
+  <div class="chat-header">
+    <span class="chat-title">EduWell AI Assistant</span>
+    <button onclick="closeChat()" class="close-chat-btn">×</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="chat-message bot"><strong>AI:</strong> Hi! How can I assist you today? 😊</div>
+  </div>
+  <div class="chat-footer">
+    <input type="text" id="chatInput" class="chat-input" placeholder="Type a message..." onkeypress="handleChat(event)">
+    <button onclick="sendMessage()" class="send-chat-btn">Send</button>
+  </div>
+</div>
+
+<!-- Emergency Helpline -->
+<button class="emergency-btn" onclick="callEmergency()">🚨 Emergency Help</button>
+
+<script>
+  // Toggle Chatbot
+  function toggleChat() {
+      let chatbox = document.getElementById("chatbox");
+      chatbox.style.display = (chatbox.style.display === "flex") ? "none" : "flex";
+  }
+
+  // Close Chatbox
+  function closeChat() {
+      document.getElementById("chatbox").style.display = "none";
+  }
+
+  // Handle Enter Key
+  function handleChat(event) {
+      if (event.key === "Enter") {
+          sendMessage();
+      }
+  }
+
+  // Send Message Function
+  function sendMessage() {
+      let inputField = document.getElementById("chatInput");
+      let input = inputField.value.trim();
+      if (input === "") return;
+
+      let chatBody = document.getElementById("chatBody");
+
+      // Append user message
+      let userMessage = `<div class="chat-message user"><strong>You:</strong> ${input}</div>`;
+      chatBody.innerHTML += userMessage;
+
+      // Clear input field
+      inputField.value = "";
+
+      // Simulated AI response
+      setTimeout(() => {
+          let botMessage = `<div class="chat-message bot"><strong>AI:</strong> I'm here to support you! How can I help? 😊</div>`;
+          chatBody.innerHTML += botMessage;
+          chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
+      }, 1000);
+  }
+
+  // Emergency Call
+  function callEmergency() {
+    alert("📞 Call 123-456-789 for immediate assistance.");
+  }
+</script>
+
+<style>
+  /* Chatbot Button */
+  .chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3fbbc0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+
+  .chatbot-btn:hover {
+    background-color: #3fbbc0;
+  }
+
+  /* Chat Container */
+  .chat-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  /* Chat Header */
+  .chat-header {
+    background: #3fbbc0;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .chat-title {
+    font-weight: bold;
+    flex-grow: 1;
+  }
+
+  .close-chat-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .close-chat-btn:hover {
+    color: #ddd;
+  }
+
+  /* Chat Body */
+  .chat-body {
+    height: 250px;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f9f9f9;
+  }
+
+  .chat-message {
+    padding: 8px;
+    border-radius: 8px;
+    margin: 5px 0;
+    max-width: 80%;
+  }
+
+  .chat-message.bot {
+    background: #3fbbc0;
+    color: white;
+    align-self: flex-start;
+  }
+
+  .chat-message.user {
+    background: #e1e1e1;
+    align-self: flex-end;
+  }
+
+  /* Chat Footer */
+  .chat-footer {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+  }
+
+  .chat-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+  }
+
+  .send-chat-btn {
+    background: #3fbbc0;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .send-chat-btn:hover {
+    background: #3fbbc0;
+  }
+</style>
+
+{#<script>#}
+{#    document.addEventListener("DOMContentLoaded", function () {#}
+{#        // Toggle Chatbot Visibility#}
+{#        function toggleChat() {#}
+{#            let chatbox = document.getElementById("chatbox");#}
+{#            let chatToggleBtn = document.getElementById("chatToggleBtn");#}
+{##}
+{#            if (chatbox.style.display === "none" || chatbox.style.display === "") {#}
+{#                chatbox.style.display = "block"; // Show chat#}
+{#                chatToggleBtn.innerHTML = "✖ Close Chat";#}
+{#            } else {#}
+{#                chatbox.style.display = "none"; // Hide chat#}
+{#                chatToggleBtn.innerHTML = "💬 Chat with AI";#}
+{#            }#}
+{#        }#}
+{##}
+{#        // Attach event listener to chatbot button#}
+{#        document.getElementById("chatToggleBtn").addEventListener("click", toggleChat);#}
+{##}
+{#        // Handle Chat Input#}
+{#        function handleChat(event) {#}
+{#            if (event.key === "Enter") {#}
+{#                sendMessage();#}
+{#            }#}
+{#        }#}
+{##}
+{#        async function sendMessage() {#}
+{#            let inputField = document.getElementById("chatInput");#}
+{#            let input = inputField.value.trim();#}
+{#            if (input === "") return;#}
+{##}
+{#            let chatBody = document.getElementById("chatBody");#}
+{#            chatBody.innerHTML += `<p><i>You:</i> ${input}</p>`;#}
+{#            inputField.value = "";#}
+{##}
+{#            // Simulating AI Response#}
+{#            setTimeout(() => {#}
+{#                chatBody.innerHTML += `<p><i>AI:</i> Stay strong! Seek support when needed. 😊</p>`;#}
+{#                chatBody.scrollTop = chatBody.scrollHeight;#}
+{#            }, 1000);#}
+{##}
+{#            // Auto-Minimize the Chatbot After 5 Seconds#}
+{#            setTimeout(() => {#}
+{#                toggleChat();#}
+{#            }, 5000);#}
+{#        }#}
+{##}
+{#        // Attach event listener to chat input field#}
+{#        document.getElementById("chatInput").addEventListener("keypress", handleChat);#}
+{##}
+{#        // Emergency Call Function#}
+{#        function callEmergency() {#}
+{#            alert("📞 Call 123-456-789 for immediate assistance.");#}
+{#        }#}
+{##}
+{#        // Attach event listener to emergency button#}
+{#        document.querySelector(".emergency-btn").addEventListener("click", callEmergency);#}
+{##}
+{#        // FAQ Toggle Logic - Ensure it Works Properly#}
+{#        document.querySelectorAll(".faq-answer").forEach(answer => {#}
+{#            answer.style.display = "none"; // Hide all answers initially#}
+{#        });#}
+{##}
+{#        document.querySelectorAll(".faq-question").forEach(question => {#}
+{#            question.addEventListener("click", function () {#}
+{#                let answer = this.nextElementSibling;#}
+{##}
+{#                // Toggle FAQ answer visibility#}
+{#                if (answer.style.display === "none" || answer.style.display === "") {#}
+{#                    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");#}
+{#                    answer.style.display = "block";#}
+{#                } else {#}
+{#                    answer.style.display = "none";#}
+{#                }#}
+{#            });#}
+{#        });#}
+{##}
+{#    }); // ✅ Ensure `DOMContentLoaded` is properly closed#}
+{#</script>#}
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+<footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a style="text-decoration: none" href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">EduWell</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Tom Mboya Street</p>
+            <p>Nairobi, Kenya</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+254 115598800</span></p>
+            <p><strong>Email:</strong> <span>info@eduwell.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-3 footer-links">
+          <h4>Challenges</h4>
+          <ul>
+            <li><a href="{% url 'relationships' %}">Relationships</a></li>
+            <li><a href="#">Drug Abuse & Addiction</a></li>
+            <li><a href="#">Mental Illness</a></li>
+            <li><a href="#">Financial Constraints</a></li>
+            <li><a href="#">Disability& Stigma</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">EduWell</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+
+        Designed by <a style="text-decoration: none" href="https://stemiotsoftwares.onrender.com/">StemiotInnovations</a>
+      </div>
+    </div>
+
+  </footer>
+</body>
+</html>
+
+
+
+
+
+

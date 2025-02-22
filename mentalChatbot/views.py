@@ -44,6 +44,9 @@ def relationships(request):
 def drugs(request):
      return render(request,'drugs.html')
 
+def mental_illness(request):
+    return render(request, 'mental_illness.html')
+
 
 
 
