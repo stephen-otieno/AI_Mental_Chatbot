@@ -80,11 +80,7 @@
         <p>Helping students navigate mental wellness together</p>
     </section>
 
-    <!-- About Us -->
-    <section >
-        <h2>About Us</h2>
-        <p>We provide a safe space for university students to seek mental health support, resources, and peer connections.</p>
-    </section>
+
 
     <!-- Resources -->
     <section class="resources">
@@ -96,19 +92,88 @@
         </ul>
     </section>
 
-    <!-- Chat Support -->
-    <section >
-        <h2>Chat Support</h2>
-        <p>Connect with a mental health professional or peer for guidance and support.</p>
-        <button class="chat-btn">Start Chat</button>
-    </section>
+
+
+   <!-- Ensure you are loading static files and AOS correctly -->
+{% load static %}
+
+
+
 
     <!-- Anonymous Forum -->
     <section >
         <h2>Anonymous Forum</h2>
-        <p>Join discussions and share experiences anonymously.</p>
+        <p>Whether you need advice, support, or just a place to share your thoughts,
+            our anonymous forum allows you to connect with others without fear of judgment.
+            Speak openly, support each other, and let your voice be heard!.</p>
         <button class="forum-btn">Join Forum</button>
     </section>
+
+
+
+  <!-- Features Section -->
+<section id="features" class="features section">
+
+  <div class="container">
+
+    <div class="row justify-content-around gy-4">
+      <!-- Image section -->
+      <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <img src="{% static 'assets/img/img_1.png' %}" alt="Features Image" class="img-fluid">
+      </div>
+
+      <!-- Text content section -->
+      <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <h3>Understanding Mental Health: Insights & Awareness</h3>
+<p>Mental illness is often misunderstood, yet it affects many lives. This article provides a closer look at mental health challenges and the need for open conversations and support.</p>
+        <!-- Icon Boxes -->
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-hand-holding-medical flex-shrink-0"></i>
+          <div>
+            <h4><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
+            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+          <i class="fa-solid fa-suitcase-medical flex-shrink-0"></i>
+          <div>
+            <h4><a href="#" class="stretched-link">Nemo Enim</a></h4>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+        <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
+          <i class="fa-solid fa-staff-snake flex-shrink-0"></i>
+          <div>
+            <h4><a href="#" class="stretched-link">Dine Pad</a></h4>
+            <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis.</p>
+          </div>
+        </div><!-- End Icon Box -->
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- End Features Section -->
+
+<!-- Ensure you have AOS and FontAwesome properly linked -->
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- AOS JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Initialize AOS -->
+<script>
+  AOS.init();
+</script>
+
 
     <!-- Contact Us -->
     <section >
@@ -129,10 +194,6 @@
             <button type="submit">Send</button>
         </form>
     </section>
-
-
-
-
 
 
 
