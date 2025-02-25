@@ -1,8 +1,9 @@
+from boto3 import client
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from django.contrib.auth.hashers import make_password
-from .models import User
+from .models import Client
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import RegisterForm,CustomLoginForm
@@ -45,6 +46,19 @@ def drugs(request):
      return render(request,'drugs.html')
 
 def mental_illness(request):
+    if request.method == 'POST':
+        client_name = request.POST['client_name']
+        client_email = request.POST['client_email']
+        client_message = request.POST['client_message']
+
+        clients = Client(
+            client_name=client_name,
+            client_email=client_email,
+            client_message=client_message
+
+        )
+        clients.save()
+
     return render(request, 'mental_illness.html')
 
 

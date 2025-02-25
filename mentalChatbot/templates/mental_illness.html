@@ -111,6 +111,7 @@
 
 
 
+
   <!-- Features Section -->
 <section id="features" class="features section">
 
@@ -122,32 +123,38 @@
         <img src="{% static 'assets/img/img_1.png' %}" alt="Features Image" class="img-fluid">
       </div>
 
+
+
       <!-- Text content section -->
       <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
         <h3>Understanding Mental Health: Insights & Awareness</h3>
 <p>Mental illness is often misunderstood, yet it affects many lives. This article provides a closer look at mental health challenges and the need for open conversations and support.</p>
-        <!-- Icon Boxes -->
+       <!-- Icon Boxes -->
         <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
-          <i class="fa-solid fa-hand-holding-medical flex-shrink-0"></i>
-          <div>
-            <h4><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+<i class="fa-solid fa-brain"></i>
+            <div>
+            <h4><a style="text-decoration: none" href="https://www.youtube.com/watch?v=C83BZ6yCd6Y&t=23s" class="stretched-link">Signs of Mental Illness</a></h4>
+            <p>Mental illness impacts people from all walks of life.
+                Understanding the signs, symptoms, and treatment options is essential to breaking the stigma and providing better support.</p>
           </div>
-        </div><!-- End Icon Box -->
+        </div><!-- EndIconBox-->
+
 
         <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
-          <i class="fa-solid fa-suitcase-medical flex-shrink-0"></i>
-          <div>
-            <h4><a href="#" class="stretched-link">Nemo Enim</a></h4>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+<i class="fa-solid fa-ribbon flex-shrink-0"></i>
+            <div>
+            <h4><a style="text-decoration: none" href="https://www.open.edu/openlearncreate/mod/oucontent/view.php?id=305&printable=1" class="stretched-link">Solutions to Mental Illness</a></h4>
+            <p>Mental illness is a complex challenge, but effective solutions exist.
+                From therapy to medication and lifestyle adjustments, there are various ways to treat and
+                manage mental illness.</p>
           </div>
         </div><!-- End Icon Box -->
 
         <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
           <i class="fa-solid fa-staff-snake flex-shrink-0"></i>
           <div>
-            <h4><a href="#" class="stretched-link">Dine Pad</a></h4>
-            <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis.</p>
+            <h4><a style="text-decoration: none" href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/mental-health-problems-introduction/causes/" class="stretched-link">Causes of Mental Illness</a></h4>
+            <p>Understanding the causes of mental illness is crucial for effective prevention, early intervention and treatment.</p>
           </div>
         </div><!-- End Icon Box -->
 
@@ -178,18 +185,19 @@
     <!-- Contact Us -->
     <section >
         <h2>Contact Us</h2>
-        <form>
+        <form action="/mental/" method="POST">
+            {% csrf_token %}
             <div>
                 <label for="name">Name (Optional)</label>
-                <input type="text" id="name">
+                <input type="text" name="client_name">
             </div>
             <div>
                 <label for="email">Email</label>
-                <input type="email" id="email" required>
+                <input type="email" name="client_email" required>
             </div>
             <div>
                 <label for="message">Message</label>
-                <textarea id="message" rows="3" required></textarea>
+                <textarea name="client_message" rows="3" required></textarea>
             </div>
             <button type="submit">Send</button>
         </form>
@@ -258,7 +266,7 @@
 
       // Simulated AI response
       setTimeout(() => {
-          let botMessage = `<div class="chat-message bot"><strong>AI:</strong> I'm here to support you! How can I help? 😊</div>`;
+          let botMessage = `<div class="chat-message bot"><strong>AI:</strong> Hello! How can I help? 😊</div>`;
           chatBody.innerHTML += botMessage;
           chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
       }, 1000);
@@ -392,89 +400,6 @@
     background: #3fbbc0;
   }
 </style>
-
-{#<script>#}
-{#    document.addEventListener("DOMContentLoaded", function () {#}
-{#        // Toggle Chatbot Visibility#}
-{#        function toggleChat() {#}
-{#            let chatbox = document.getElementById("chatbox");#}
-{#            let chatToggleBtn = document.getElementById("chatToggleBtn");#}
-{##}
-{#            if (chatbox.style.display === "none" || chatbox.style.display === "") {#}
-{#                chatbox.style.display = "block"; // Show chat#}
-{#                chatToggleBtn.innerHTML = "✖ Close Chat";#}
-{#            } else {#}
-{#                chatbox.style.display = "none"; // Hide chat#}
-{#                chatToggleBtn.innerHTML = "💬 Chat with AI";#}
-{#            }#}
-{#        }#}
-{##}
-{#        // Attach event listener to chatbot button#}
-{#        document.getElementById("chatToggleBtn").addEventListener("click", toggleChat);#}
-{##}
-{#        // Handle Chat Input#}
-{#        function handleChat(event) {#}
-{#            if (event.key === "Enter") {#}
-{#                sendMessage();#}
-{#            }#}
-{#        }#}
-{##}
-{#        async function sendMessage() {#}
-{#            let inputField = document.getElementById("chatInput");#}
-{#            let input = inputField.value.trim();#}
-{#            if (input === "") return;#}
-{##}
-{#            let chatBody = document.getElementById("chatBody");#}
-{#            chatBody.innerHTML += `<p><i>You:</i> ${input}</p>`;#}
-{#            inputField.value = "";#}
-{##}
-{#            // Simulating AI Response#}
-{#            setTimeout(() => {#}
-{#                chatBody.innerHTML += `<p><i>AI:</i> Stay strong! Seek support when needed. 😊</p>`;#}
-{#                chatBody.scrollTop = chatBody.scrollHeight;#}
-{#            }, 1000);#}
-{##}
-{#            // Auto-Minimize the Chatbot After 5 Seconds#}
-{#            setTimeout(() => {#}
-{#                toggleChat();#}
-{#            }, 5000);#}
-{#        }#}
-{##}
-{#        // Attach event listener to chat input field#}
-{#        document.getElementById("chatInput").addEventListener("keypress", handleChat);#}
-{##}
-{#        // Emergency Call Function#}
-{#        function callEmergency() {#}
-{#            alert("📞 Call 123-456-789 for immediate assistance.");#}
-{#        }#}
-{##}
-{#        // Attach event listener to emergency button#}
-{#        document.querySelector(".emergency-btn").addEventListener("click", callEmergency);#}
-{##}
-{#        // FAQ Toggle Logic - Ensure it Works Properly#}
-{#        document.querySelectorAll(".faq-answer").forEach(answer => {#}
-{#            answer.style.display = "none"; // Hide all answers initially#}
-{#        });#}
-{##}
-{#        document.querySelectorAll(".faq-question").forEach(question => {#}
-{#            question.addEventListener("click", function () {#}
-{#                let answer = this.nextElementSibling;#}
-{##}
-{#                // Toggle FAQ answer visibility#}
-{#                if (answer.style.display === "none" || answer.style.display === "") {#}
-{#                    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");#}
-{#                    answer.style.display = "block";#}
-{#                } else {#}
-{#                    answer.style.display = "none";#}
-{#                }#}
-{#            });#}
-{#        });#}
-{##}
-{#    }); // ✅ Ensure `DOMContentLoaded` is properly closed#}
-{#</script>#}
-
-
-
 
 
 
