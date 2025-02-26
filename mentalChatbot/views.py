@@ -42,9 +42,12 @@ def login_page(request):
 def relationships(request):
     return render(request,'relationships.html')
 
+
+@login_required(login_url='login')
 def drugs(request):
      return render(request,'drugs.html')
 
+@login_required(login_url='login')
 def mental_illness(request):
     if request.method == 'POST':
         client_name = request.POST['client_name']
@@ -60,6 +63,10 @@ def mental_illness(request):
         clients.save()
 
     return render(request, 'mental_illness.html')
+
+@login_required(login_url='login')
+def disability(request):
+    return render(request, 'disability.html')
 
 
 

@@ -42,7 +42,7 @@
     <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <a href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
           <img src="{% static 'assets/img/logo1.png' %}" alt="">
            <h1 class="sitename">EduWell</h1>
         </a>
@@ -187,6 +187,7 @@
                   <span> <b style="color: red">Financial Constraints</b> <br>Can you truly focus on your mental health when financial worries are constantly weighing you down? <br>
                       Can financial anxiety ever truly be ignored when it’s constantly on your mind?
                   </span>
+
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="{% static 'assets/img/testimonials/NoFinance.JPG' %}" class="testimonial-img" alt="">
@@ -200,6 +201,8 @@
                   <i class="bi bi-quote quote-icon-left"></i>
                   <span> <b style="color: red">Disability & Stigma</b> <br>How can we continue to see disability as an inability when so many individuals demonstrate resilience and capability every day? <br>
                       What if a disability only reveals different abilities</span>
+                       <a href="{% url 'disability' %}" class="stretched-link"> </a>
+
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <img src="{% static 'assets/img/testimonials/stop stigma.JPG' %}" class="testimonial-img" alt="">

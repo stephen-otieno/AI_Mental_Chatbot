@@ -11,5 +11,7 @@ urlpatterns = [
 
     path('mental/', views.mental_illness, name='mental_illness'),
 
+    path('disability/', views.disability, name='disability'),
+
 ]
 
