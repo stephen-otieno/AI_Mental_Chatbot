@@ -106,13 +106,11 @@
 
   </header>
 
-        <section id="tabs" class="tabs section">
-
-
     <!-- Section Title -->
+    <section id="tabs" class="tabs section">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Departments</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Disability and Stigma</h2>
+        <p>Disability is a natural part of human diversity, yet people with disabilities often face societal barriers and misconceptions that lead to exclusion and discrimination. Stigma remains a significant challenge, affecting their ability to participate fully in social, economic, and cultural life. Many individuals with disabilities encounter prejudice, lack of accessibility, and institutional challenges that hinder their progress. Addressing these issues requires awareness, advocacy, and inclusive policies to ensure equal opportunities for all.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -121,7 +119,7 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tabs-tab-1">Cardiology</a>
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tabs-tab-1">Disabilities</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-2">Neurology</a>
@@ -142,12 +140,22 @@
               <div class="tab-pane active show" id="tabs-tab-1">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Cardiology</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                    <h3>Disabilities</h3>
+                    <p class="fst-italic">Common disabilities in a university setup:</p>
+                      <p>
+                          <ul>
+                      <a href="https://www.enableme.ke/en/article/overcoming-stigmatization-for-persons-with-albinism-10035"> <li>Albinism</li> </a>
+                      <a href="https://www.hearing.com.au/seven-tips-to-help-you-manage-hearing-loss-at-uni/"><li>Hearing impairment</li> </a>
+                      <a href="https://www.enableme.ke/en/article/6-ways-to-be-considerate-around-people-with-visual-impairment-1457"><li>Visual Impairment</li> </a>
+                      <a href="https://www.braunability.com/us/en/blog/accessible-living/how-to-help-mobility-impairment.html"><li>Mobility impairment</li> </a>
+
+
+                  </ul>
+
+                      </p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="{% static 'assets/img/departments-1.jpg' %}" alt="" class="img-fluid">
+                    <img src="{% static 'assets/img/img.png' %}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
@@ -205,8 +213,7 @@
 
       </div>
 
-        </section>
-
+    </section><!-- /Tabs Section -->
 
 
 
@@ -220,13 +227,16 @@
     <button onclick="closeChat()" class="close-chat-btn">×</button>
   </div>
   <div class="chat-body" id="chatBody">
-    <div class="chat-message bot"><strong>AI:</strong> Hi! How can I assist you today? 😊</div>
+    <div class="chat-message ai-message"><strong>AI:</strong> Hi! How can I assist you today? 😊</div>
   </div>
   <div class="chat-footer">
     <input type="text" id="chatInput" class="chat-input" placeholder="Type a message..." onkeypress="handleChat(event)">
     <button onclick="sendMessage()" class="send-chat-btn">Send</button>
   </div>
 </div>
+
+<!-- Emergency Helpline -->
+<button class="emergency-btn" onclick="callEmergency()">🚨 Emergency Help</button>
 
 <style>
   /* Chatbot Button */
@@ -246,7 +256,7 @@
   }
 
   .chatbot-btn:hover {
-    background-color: #3fbbc0;
+    background-color: #359a9f;
   }
 
   /* Chat Container */
@@ -295,16 +305,16 @@
   }
 
   /* Chat Body */
-.chat-body {
+  .chat-body {
     max-height: 300px;
     overflow-y: auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
-}
+  }
 
-/* User's Message (Align Right) */
-.chat-body .user-message {
+  /* User's Message */
+  .chat-body .user-message {
     align-self: flex-end;
     background-color: #3fbbc0;
     color: white;
@@ -312,10 +322,10 @@
     border-radius: 15px;
     max-width: 70%;
     margin: 5px 0;
-}
+  }
 
-/* AI's Message (Align Left) */
-.chat-body .ai-message {
+  /* AI's Message */
+  .chat-body .ai-message {
     align-self: flex-start;
     background-color: #f1f1f1;
     color: black;
@@ -323,25 +333,6 @@
     border-radius: 15px;
     max-width: 70%;
     margin: 5px 0;
-}
-
-
-  .chat-message {
-    padding: 8px;
-    border-radius: 8px;
-    margin: 5px 0;
-    max-width: 80%;
-  }
-
-  .chat-message.bot {
-    background: #3fbbc0;
-    color: white;
-    align-self: flex-start;
-  }
-
-  .chat-message.user {
-    background: #e1e1e1;
-    align-self: flex-end;
   }
 
   /* Chat Footer */
@@ -371,18 +362,35 @@
   }
 
   .send-chat-btn:hover {
-    background: #3fbbc0;
+    background: #359a9f;
+  }
+
+  /* Emergency Button */
+  .emergency-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+
+  .emergency-btn:hover {
+    background-color: darkred;
   }
 </style>
 
-      <!-- Emergency Helpline -->
-  <button class="emergency-btn" onclick="callEmergency()">🚨 Emergency Help</button>
-
 <script>
-  // Toggle Chatbot
+  // Toggle Chatbot Visibility
   function toggleChat() {
       let chatbox = document.getElementById("chatbox");
-      chatbox.style.display = (chatbox.style.display === "flex") ? "none" : "flex";
+      chatbox.style.display = (chatbox.style.display === "none" || chatbox.style.display === "") ? "flex" : "none";
   }
 
   // Close Chatbox
@@ -390,7 +398,7 @@
       document.getElementById("chatbox").style.display = "none";
   }
 
-  // Handle Enter Key
+  // Handle Enter Key for Sending Message
   function handleChat(event) {
       if (event.key === "Enter") {
           sendMessage();
@@ -399,35 +407,44 @@
 
   // Send Message Function
   function sendMessage() {
-    let inputField = document.getElementById("chatInput");
-    let input = inputField.value.trim();
-    if (input === "") return;
+      let inputField = document.getElementById("chatInput");
+      let input = inputField.value.trim();
+      if (input === "") return;
 
-    let chatBody = document.getElementById("chatBody");
+      let chatBody = document.getElementById("chatBody");
 
-    // User's message
-    let userMessage = <p class="user-message"><i>You:</i> ${input}</p>;
-    chatBody.innerHTML += userMessage;
+      // User Message
+      let userMessage = document.createElement("p");
+      userMessage.classList.add("user-message");
+      userMessage.innerHTML = `<i>You:</i> ${input}`;
+      chatBody.appendChild(userMessage);
 
-    inputField.value = "";
+      inputField.value = "";
+      chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to bottom
 
-    // Simulated AI Response (Align Left)
-    setTimeout(() => {
-        let aiMessage = <p class="ai-message"><i>AI:</i> Stay strong! Seek support when needed. 😊</p>;
-        chatBody.innerHTML += aiMessage;
-        chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll
-    }, 1000);
-}
+      // Simulated AI Response (Align Left)
+      setTimeout(() => {
+          let aiMessage = document.createElement("p");
+          aiMessage.classList.add("ai-message");
+          aiMessage.innerHTML = `<i>AI:</i> Stay strong! Seek support when needed. 😊`;
+          chatBody.appendChild(aiMessage);
+          chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll
+      }, 1000);
+  }
 
-  // Emergency Call
+  // Emergency Call Function
   function callEmergency() {
-    alert("📞 Call 123-456-789 for immediate assistance.");
+      alert("📞 Call 123-456-789 for immediate assistance.");
   }
 </script>
 
+    <!-- Bootstrap CSS -->
+{#<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
 
 <!-- Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </main>
 
@@ -466,10 +483,10 @@
           <h4>Challenges</h4>
           <ul>
             <li><a href="{% url 'relationships' %}">Relationships</a></li>
-            <li><a href="{% url 'drugs' %}">Drug Abuse & Addiction</a></li>
+            <li><a href="#">Drug Abuse & Addiction</a></li>
             <li><a href="#">Mental Illness</a></li>
             <li><a href="#">Financial Constraints</a></li>
-            <li><a href="{% url 'disability' %}">Disability& Stigma</a></li>
+            <li><a href="#">Disability& Stigma</a></li>
           </ul>
         </div>
 
@@ -479,9 +496,11 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">EduWell</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        Designed by <a href="">StemiotInnovations</a>
+        Designed by <a href="https://bootstrapmade.com/">MendTech</a>
       </div>
     </div>
   </footer>
-</html>
 
+</body>
+
+</html>
