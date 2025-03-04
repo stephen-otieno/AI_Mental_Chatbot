@@ -5,6 +5,37 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #333;
+        font-family: 'Roboto', sans-serif;
+
+}
+
+
+/* Style for the cards */
+.card {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Headings */
+.card h2 {
+    font-size: 24px;
+    font-weight: 700; /* Bold */
+    color: #2ab7ca;
+}
+
+/* Paragraph text */
+.card p {
+    font-size: 14px;
+    font-weight: 400; /* Normal */
+    color: #555;
+}
+
+/* Buttons */
+.card button {
+    font-size: 14px;
+    padding: 10px 15px;
+    font-weight: 500;/*Medium*/
 }
 
 /* Header */
@@ -22,6 +53,10 @@ header {
     justify-content: center;
     padding: 20px;
 }
+
+ .container1 .card h2 {
+            font-family: "Roboto Light", sans-serif;
+        }
 
 /* Cards */
 .card {

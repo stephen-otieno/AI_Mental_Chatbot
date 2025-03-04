@@ -12,6 +12,25 @@
             background: url("{% static 'assets/img/gallery/gallery-1.jpg' %}");
             background-size: cover;
         }
+        form p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns labels to the left */
+    margin-bottom: 15px; /* Adds spacing between input fields */
+}
+
+form label {
+    font-weight: bold; /* Makes labels stand out */
+    margin-bottom: 5px; /* Adds space between label and input field */
+}
+
+form input {
+    width: 100%; /* Ensures inputs take full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius:5px;
+}
+
     </style>
 </head>
 <body>
