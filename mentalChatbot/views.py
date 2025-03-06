@@ -1,8 +1,6 @@
-from boto3 import client
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from django.contrib.auth.hashers import make_password
 from .models import Client
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
@@ -59,6 +57,7 @@ def mental_illness(request):
             client_email=client_email,
             client_message=client_message
 
+
         )
         clients.save()
 
@@ -67,6 +66,12 @@ def mental_illness(request):
 @login_required(login_url='login')
 def disability(request):
     return render(request, 'disability.html')
+
+
+@login_required(login_url='login')
+def view_clients(request):
+    clients = Client.objects.all()
+    return render(request, 'view_clients.html', {'clients':clients})
 
 
 

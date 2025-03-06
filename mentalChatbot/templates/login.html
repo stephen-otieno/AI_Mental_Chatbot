@@ -42,7 +42,7 @@ form input {
         </div>
         <div class="right-panel">
             <h2>Login</h2>
-            <form id="signupForm" action="{% url 'login' %}" method="POST">
+            <form id="signupForm" action="/login/" method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button href="{% url 'homepage' %}" type="submit">Login</button>
