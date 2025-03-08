@@ -14,5 +14,7 @@ urlpatterns = [
     path('disability/', views.disability, name='disability'),
     path('clients/', views.view_clients, name='clients'),
 
+    path('forum/', views.forum_view, name='forum'),
+
 ]
 

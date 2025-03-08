@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from .models import Client
+from .models import Client, ForumPost, ForumResponse
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import RegisterForm,CustomLoginForm
@@ -72,6 +72,27 @@ def disability(request):
 def view_clients(request):
     clients = Client.objects.all()
     return render(request, 'view_clients.html', {'clients':clients})
+
+def forum(request):
+    return render(request,'forum.html')
+
+
+def forum_view(request):
+    if request.method == "POST":
+        if "submit_post" in request.POST:  # Handle Post Submission
+            content = request.POST.get("post_content")
+            ForumPost.objects.create(content=content)  # Post remains unapproved until admin approval
+
+        elif "submit_response" in request.POST:  # Handle Response Submission
+            post_id = request.POST.get("post_id")
+            content = request.POST.get("response_content")
+            post = ForumPost.objects.get(id=post_id)
+            ForumResponse.objects.create(post=post, content=content)  # Response remains unapproved
+
+        return redirect("forum")
+
+    posts = ForumPost.objects.filter(is_approved=True).order_by("-created_at")
+    return render(request, "forum.html", {"posts": posts})
 
 
 
