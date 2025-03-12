@@ -83,14 +83,25 @@
 
 
     <!-- Resources -->
-    <section class="resources">
-        <h2>Mental Health Resources</h2>
-        <ul >
-            <li ><a style="color:  #3fbbc0" href="#">Mental Health Articles</a></li>
-            <li ><a style="color:  #3fbbc0" href="#">Helplines</a></li>
-            <li ><a style="color:  #3fbbc0" href="#">Counseling Services</a></li>
-        </ul>
-    </section>
+
+
+  <section class="resources">
+      <h2>Mental Health Resources</h2>
+      <ul>
+          <li><a  style="color:  #3fbbc0" href="https://www.medicalnewstoday.com/articles/154543">Mental Health Articles</a></li>
+          <li><a  style="color:  #3fbbc0" href="https://www.whatseatingmymind.com/emergency-hotline-numbers">Helplines</a></li>
+          <li><a  style="color:  #3fbbc0" href="https://www.cbtkenya.org/">Counseling Services</a></li>
+      </ul>
+</section>
+
+{#    <section class="resources">#}
+{#        <h2>Mental Health Resources</h2>#}
+{#        <ul >#}
+{#            <li ><a style="color:  #3fbbc0" href="#">Mental Health Articles</a></li>#}
+{#            <li ><a style="color:  #3fbbc0" href="#">Helplines</a></li>#}
+{#            <li ><a style="color:  #3fbbc0" href="#">Counseling Services</a></li>#}
+{#        </ul>#}
+{#    </section>#}
 
 
 
@@ -186,15 +197,17 @@
         <h2>Contact Us</h2>
         <form action="/mental/" method="POST">
             {% csrf_token %}
-            <div>
-                <label for="name">Name (Optional)</label>
-                <input type="text" name="client_name">
+            <div class="col-md-6">
+                <label  for="name">Name (Optional)</label>
+                <input  type="text" name="client_name">
             </div>
-            <div>
+
+            <div class="col-md-6">
                 <label for="email">Email</label>
                 <input type="email" name="client_email" required>
             </div>
-            <div>
+
+            <div class="col-md-8">
                 <label for="message">Message</label>
                 <textarea name="client_message" rows="3" required></textarea>
             </div>
@@ -405,7 +418,8 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
-
+  <br><br><br>
+  <hr>
 <footer id="footer" class="footer light-background">
 
     <div class="container footer-top">
