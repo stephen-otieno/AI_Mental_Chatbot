@@ -94,7 +94,8 @@ def forum_view(request):
     posts = ForumPost.objects.filter(is_approved=True).order_by("-created_at")
     return render(request, "forum.html", {"posts": posts})
 
-
+def contact(request):
+    return render(request,'contact.html')
 
 
 # Create your views here.

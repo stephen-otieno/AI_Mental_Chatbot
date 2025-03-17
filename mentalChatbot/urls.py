@@ -15,6 +15,7 @@ urlpatterns = [
     path('clients/', views.view_clients, name='clients'),
 
     path('forum/', views.forum_view, name='forum'),
+    path('contact/', views.contact, name='contact'),
 
 ]
 

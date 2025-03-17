@@ -44,27 +44,28 @@
     <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a style="text-decoration: none" href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
-          <img src="{% static 'assets/img/logo1.png' %}" alt="">
-          <h1 class="sitename">EduWell</h1>
-        </a>
+      <a style="text-decoration: none" href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'assets/img/logo1.png' %}" alt="">
+        <h1  class="sitename">EduWell</h1>
+      </a>
 
-        <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="{% url 'homepage' %}" class="active">Home</a></li>
-              <li><a href="#substances">Substances</a></li>
-              <li><a href="#effects">Effects</a></li>
-            <li><a href="#causes">Causes</a></li>
-            <li><a href="#prevention">Prevention</a></li>
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="{% url 'relationships' %}">Relationships</a></li>
+            <li><a href="{% url 'drugs' %}">Drugs</a></li>
+            <li><a  class="active" href="{% url 'mental_illness' %}">Mental Illness</a></li>
 
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a style="text-decoration: none" class="cta-btn" href="index.html#appointment">Make an Appointment</a>
-
+        <a style="text-decoration: none" class="cta-btn" href="{% url 'forum' %}">Join Discussion</a>
       </div>
+
 
     </div>
 
@@ -192,226 +193,7 @@
 </script>
 
 
-    <!-- Contact Us -->
-    <section >
-        <h2>Contact Us</h2>
-        <form action="/mental/" method="POST">
-            {% csrf_token %}
-            <div class="col-md-6">
-                <label  for="name">Name (Optional)</label>
-                <input  type="text" name="client_name">
-            </div>
 
-            <div class="col-md-6">
-                <label for="email">Email</label>
-                <input type="email" name="client_email" required>
-            </div>
-
-            <div class="col-md-8">
-                <label for="message">Message</label>
-                <textarea name="client_message" rows="3" required></textarea>
-            </div>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-
-
-
-
-
-
- <!-- Chatbot Button -->
-<button class="chatbot-btn" onclick="toggleChat()">💬 Chat with AI</button>
-
-<!-- Chatbot UI -->
-<div class="chat-container" id="chatbox">
-  <div class="chat-header">
-    <span class="chat-title">EduWell AI Assistant</span>
-    <button onclick="closeChat()" class="close-chat-btn">×</button>
-  </div>
-  <div class="chat-body" id="chatBody">
-    <div class="chat-message bot"><strong>AI:</strong> Hi! How can I assist you today? 😊</div>
-  </div>
-  <div class="chat-footer">
-    <input type="text" id="chatInput" class="chat-input" placeholder="Type a message..." onkeypress="handleChat(event)">
-    <button onclick="sendMessage()" class="send-chat-btn">Send</button>
-  </div>
-</div>
-
-<!-- Emergency Helpline -->
-<button class="emergency-btn" onclick="callEmergency()">🚨 Emergency Help</button>
-
-<script>
-  // Toggle Chatbot
-  function toggleChat() {
-      let chatbox = document.getElementById("chatbox");
-      chatbox.style.display = (chatbox.style.display === "flex") ? "none" : "flex";
-  }
-
-  // Close Chatbox
-  function closeChat() {
-      document.getElementById("chatbox").style.display = "none";
-  }
-
-  // Handle Enter Key
-  function handleChat(event) {
-      if (event.key === "Enter") {
-          sendMessage();
-      }
-  }
-
-  // Send Message Function
-  function sendMessage() {
-      let inputField = document.getElementById("chatInput");
-      let input = inputField.value.trim();
-      if (input === "") return;
-
-      let chatBody = document.getElementById("chatBody");
-
-      // Append user message
-      let userMessage = `<div class="chat-message user"><strong>You:</strong> ${input}</div>`;
-      chatBody.innerHTML += userMessage;
-
-      // Clear input field
-      inputField.value = "";
-
-      // Simulated AI response
-      setTimeout(() => {
-          let botMessage = `<div class="chat-message bot"><strong>AI:</strong> Hello! How can I help? 😊</div>`;
-          chatBody.innerHTML += botMessage;
-          chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll to the latest message
-      }, 1000);
-  }
-
-  // Emergency Call
-  function callEmergency() {
-    alert("📞 Call 123-456-789 for immediate assistance.");
-  }
-</script>
-
-<style>
-  /* Chatbot Button */
-  .chatbot-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #3fbbc0;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-  }
-
-  .chatbot-btn:hover {
-    background-color: #3fbbc0;
-  }
-
-  /* Chat Container */
-  .chat-container {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 320px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    transition: 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  /* Chat Header */
-  .chat-header {
-    background: #3fbbc0;
-    color: white;
-    padding: 12px;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .chat-title {
-    font-weight: bold;
-    flex-grow: 1;
-  }
-
-  .close-chat-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    padding: 5px;
-  }
-
-  .close-chat-btn:hover {
-    color: #ddd;
-  }
-
-  /* Chat Body */
-  .chat-body {
-    height: 250px;
-    overflow-y: auto;
-    padding: 10px;
-    background: #f9f9f9;
-  }
-
-  .chat-message {
-    padding: 8px;
-    border-radius: 8px;
-    margin: 5px 0;
-    max-width: 80%;
-  }
-
-  .chat-message.bot {
-    background: #3fbbc0;
-    color: white;
-    align-self: flex-start;
-  }
-
-  .chat-message.user {
-    background: #e1e1e1;
-    align-self: flex-end;
-  }
-
-  /* Chat Footer */
-  .chat-footer {
-    display: flex;
-    padding: 10px;
-    background: white;
-    border-top: 1px solid #ddd;
-  }
-
-  .chat-input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    outline: none;
-  }
-
-  .send-chat-btn {
-    background: #3fbbc0;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    margin-left: 5px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-
-  .send-chat-btn:hover {
-    background: #3fbbc0;
-  }
-</style>
 
 
 
@@ -475,6 +257,10 @@
     </div>
 
   </footer>
+ <script src="{% static 'assets/js/main.js' %}"></script>
+      <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="p31mVucZkrlWsb_Xl6WTN";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>
 

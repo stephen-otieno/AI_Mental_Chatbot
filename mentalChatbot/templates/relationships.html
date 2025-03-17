@@ -65,28 +65,30 @@
 
     <div class="branding d-flex align-items-center">
 
-      <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
-          <img src="{% static 'assets/img/logo1.png' %}" alt="">
-           <h1 class="sitename">EduWell</h1>
-        </a>
+        <div class="container position-relative d-flex align-items-center justify-content-end">
+      <a href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'assets/img/logo1.png' %}" alt="">
+        <h1 class="sitename">EduWell</h1>
+      </a>
 
-        <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="{% url 'homepage' %}" class="active">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#departments">Departments</a></li>
-            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="{% url 'homepage' %}" >Home</a></li>
+            <li><a href="{% url 'relationships' %}" class="active">Relationships</a></li>
+            <li><a href="{% url 'drugs' %}">Drugs</a></li>
+            <li><a href="{% url 'mental_illness' %}">Mental Illness</a></li>
 
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-
+        <a class="cta-btn" href="{% url 'forum' %}">Join Discussion</a>
       </div>
 
     </div>
+
 
 
   </header>
@@ -333,6 +335,10 @@
   <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
 
   <!-- Main JS File -->
+   <script src="{% static 'assets/js/main.js' %}"></script>
+      <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="p31mVucZkrlWsb_Xl6WTN";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
     <script src="{% static 'assets/js/relationships.js' %}"></script>
   <script src="{% static 'assets/js/main.js' %}"></script>
 

@@ -41,27 +41,28 @@
     <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
-          <img src="{% static 'assets/img/logo1.png' %}" alt="">
-          <h1 class="sitename">EduWell</h1>
-        </a>
+      <a href="{% url 'homepage' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'assets/img/logo1.png' %}" alt="">
+        <h1 class="sitename">EduWell</h1>
+      </a>
 
-        <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="{% url 'homepage' %}" class="active">Home</a></li>
-              <li><a href="#substances">Substances</a></li>
-              <li><a href="#effects">Effects</a></li>
-            <li><a href="#causes">Causes</a></li>
-            <li><a href="#prevention">Prevention</a></li>
+            <li><a href="{% url 'homepage' %}" >Home</a></li>
+            <li><a href="{% url 'relationships' %}">Relationships</a></li>
+            <li><a class="active" href="{% url 'drugs' %}">Drugs</a></li>
+            <li><a href="{% url 'mental_illness' %}">Mental Illness</a></li>
 
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="cta-btn" href="index.html#appointment">Make an Appointment</a>
-
+        <a class="cta-btn" href="{% url 'forum' %}">Join Discussion</a>
       </div>
+
 
     </div>
 
@@ -157,122 +158,6 @@
 
 
 
-
-
-  <!-- Chatbot -->
-<button onclick="toggleChat()" style="position: fixed; bottom: 40px; right: 20px;">💬 Chat with AI</button>
-<div class="chat-container" id="chatbox" style="display: none;">
-    <div class="chat-header">EduWell AI Assistant</div>
-    <div class="chat-body" id="chatBody">
-        <p><i>AI:</i> Hi! How can I assist you?</p>
-    </div>
-    <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." onkeypress="handleChat(event)">
-</div>
-
-<!-- Emergency Helpline -->
-<button class="emergency-btn" onclick="callEmergency()">🚨 Emergency Help</button>
-
-<!-- Chatbot Button -->
-<button id="chatToggleBtn" onclick="toggleChat()" style="position: fixed; bottom: 40px; right: 20px;">💬 Chat with AI</button>
-
-<!-- Chatbot Container -->
-<div class="chat-container" id="chatbox" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; border: 1px solid #ccc; background: white; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); border-radius: 10px;">
-    <div class="chat-header" style="background: #007bff; color: white; padding: 10px; display: flex; justify-content: space-between;">
-        <span>EduWell AI Assistant</span>
-        <button onclick="toggleChat()" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">✖</button>
-    </div>
-    <div class="chat-body" id="chatBody" style="padding: 10px; max-height: 200px; overflow-y: auto;">
-        <p><i>AI:</i> Hi! How can I assist you?</p>
-    </div>
-    <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." onkeypress="handleChat(event)" style="width: 100%; padding: 8px; border: none; border-top: 1px solid #ccc;">
-</div>
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Toggle Chatbot Visibility
-        function toggleChat() {
-            let chatbox = document.getElementById("chatbox");
-            let chatToggleBtn = document.getElementById("chatToggleBtn");
-
-            if (chatbox.style.display === "none" || chatbox.style.display === "") {
-                chatbox.style.display = "block"; // Show chat
-                chatToggleBtn.innerHTML = "✖ Close Chat";
-            } else {
-                chatbox.style.display = "none"; // Hide chat
-                chatToggleBtn.innerHTML = "💬 Chat with AI";
-            }
-        }
-
-        // Attach event listener to chatbot button
-        document.getElementById("chatToggleBtn").addEventListener("click", toggleChat);
-
-        // Handle Chat Input
-        function handleChat(event) {
-            if (event.key === "Enter") {
-                sendMessage();
-            }
-        }
-
-        async function sendMessage() {
-            let inputField = document.getElementById("chatInput");
-            let input = inputField.value.trim();
-            if (input === "") return;
-
-            let chatBody = document.getElementById("chatBody");
-            chatBody.innerHTML += `<p><i>You:</i> ${input}</p>`;
-            inputField.value = "";
-
-            // Simulating AI Response
-            setTimeout(() => {
-                chatBody.innerHTML += `<p><i>AI:</i> Stay strong! Seek support when needed. 😊</p>`;
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }, 1000);
-
-            // Auto-Minimize the Chatbot After 5 Seconds
-            setTimeout(() => {
-                toggleChat();
-            }, 5000);
-        }
-
-        // Attach event listener to chat input field
-        document.getElementById("chatInput").addEventListener("keypress", handleChat);
-
-        // Emergency Call Function
-        function callEmergency() {
-            alert("📞 Call 123-456-789 for immediate assistance.");
-        }
-
-        // Attach event listener to emergency button
-        document.querySelector(".emergency-btn").addEventListener("click", callEmergency);
-
-        // FAQ Toggle Logic - Ensure it Works Properly
-        document.querySelectorAll(".faq-answer").forEach(answer => {
-            answer.style.display = "none"; // Hide all answers initially
-        });
-
-        document.querySelectorAll(".faq-question").forEach(question => {
-            question.addEventListener("click", function () {
-                let answer = this.nextElementSibling;
-
-                // Toggle FAQ answer visibility
-                if (answer.style.display === "none" || answer.style.display === "") {
-                    document.querySelectorAll(".faq-answer").forEach(ans => ans.style.display = "none");
-                    answer.style.display = "block";
-                } else {
-                    answer.style.display = "none";
-                }
-            });
-        });
-
-    }); // ✅ Ensure `DOMContentLoaded` is properly closed
-</script>
-
-
-
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 
@@ -332,6 +217,10 @@
     </div>
 
   </footer>
+ <script src="{% static 'assets/js/main.js' %}"></script>
+      <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="p31mVucZkrlWsb_Xl6WTN";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>
 
