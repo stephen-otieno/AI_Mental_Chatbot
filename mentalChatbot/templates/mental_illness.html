@@ -28,7 +28,6 @@
 
   <!-- Main CSS File -->
   <link href="{% static 'assets/css/main.css ' %}" rel="stylesheet">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="{% static 'assets/css/mental.css' %}">
 
@@ -49,8 +48,8 @@
         <h1  class="sitename">EduWell</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-          <ul>
+      <nav  id="navmenu" class="navmenu">
+          <ul >
             <li><a href="{% url 'homepage' %}">Home</a></li>
             <li><a href="{% url 'relationships' %}">Relationships</a></li>
             <li><a href="{% url 'drugs' %}">Drugs</a></li>
@@ -254,8 +253,9 @@
 
   </footer>
  <script src="{% static 'assets/js/main.js' %}"></script>
-      <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="p31mVucZkrlWsb_Xl6WTN";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+      <script src="{% static 'assets/js/main.js' %}"></script>
+     <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="AIs_uELkyg3DQPNSgMqKt";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
 </body>
 </html>
